@@ -1,86 +1,72 @@
-Haze Detection and Removal with CNN & DCP
+# Haze-Detection-and-Removal-with-CNN-and-DCP
+This project utilizes a Convolutional Neural Network (CNN) to classify images as hazy or clear. If the image is hazy, the Dark Channel Prior (DCP) algorithm is applied to remove the haze and enhance the image clarity.
 
-This project combines deep learning and classical image processing to detect and remove haze from images. A Convolutional Neural Network (CNN) is used for haze classification, and the Dark Channel Prior (DCP) algorithm enhances image clarity by removing detected haze.
+## Project Overview
 
-📌 Project Summary
+The main goal of this project is to provide an efficient method for detecting haze in images and then removing it using a deep learning model (CNN) and a classical image processing technique (DCP). The CNN is trained to classify whether an image contains haze or not, and if haze is detected, the DCP algorithm is applied to remove the haze and enhance the image.
 
-Hazy images can degrade visibility and impact computer vision tasks. This project offers a dual approach:
+## Requirements
 
-Haze Detection: A CNN model classifies images as hazy or clear.
+- Python
+- torch
+- Pillow
+- scikit-image
+- numpy
+- scipy
+- matplotlib
 
-Haze Removal: If haze is detected, the DCP algorithm restores image clarity.
+You can install the necessary dependencies by running the following command:
 
-🛠 Requirements
-
-Ensure you have the following dependencies installed:
-
-Python
-
-PyTorch
-
-Pillow
-
-scikit-image
-
-NumPy
-
-SciPy
-
-Matplotlib
-
-Install all dependencies using:
-
+```bash
 pip install -r requirements.txt
+```
 
-🚀 Installation & Setup
 
-Clone the repository:
+## Installation
 
+Clone the repository to your local machine:
+
+```bash
 git clone https://github.com/ilknurpehlivan/Haze-Detection-and-Removal-with-CNN-and-DCP.git
+```
 
-📂 Datasets
 
-The project utilizes publicly available datasets:
 
-Dense Haze Dataset (NTIRE 2019 Challenge)
+## How It Works
 
-Provides real-world and synthetic hazy images.
+Haze Detection:
+A CNN is trained to classify whether an image contains haze or not.
+The model is trained on a labeled dataset of hazy and non-hazy images.
 
-Dataset Link
+Haze Removal:
+If haze is detected in an image, the DCP algorithm is applied to estimate the transmission map and atmospheric light, and then haze is removed to restore image clarity.
 
-RESIDE Standard Dataset
+## Dataset
+The datasets used for training the CNN model and for testing the haze removal process are publicly available.
 
-Includes both real and synthetic hazy images with ground truth.
+1. Dense Haze Dataset - NTIRE 2019 Challenge Dataset
+The Dense Haze Dataset is part of the NTIRE 2019 Challenge and provides a large set of hazy and haze-free image pairs for training and testing. It contains both real-world and synthetic images with dense haze in various scenes.
 
-Dataset Link
+Dataset Source: https://data.vision.ee.ethz.ch/cvl/ntire19//dense-haze/
 
-🔹 Organizing Data
+2. RESIDE Standard Dataset
+The RESIDE Standard Dataset contains both real and synthetic hazy images along with ground truth for haze removal tasks. It is designed to evaluate dehazing methods.
 
-Download and extract the datasets, then structure them in the data folder as follows:
+Dataset Source: https://sites.google.com/view/reside-dehaze-datasets/reside-standard
 
-data/
- ├── hazy_images/
- ├── clear_images/
+### How to Use the Dataset
+Download the Datasets using the links above, then extract and organize the images into separate folders for hazy images and corresponding clear (haze-free) images.
+Place the datasets into the "data" folder of this repository.
 
-🏋 Training the Model
+## Training the Model
 
-Train the CNN model using:
+To train the CNN model, you need to prepare the dataset and run the following script:
 
+```bash
 python train.py
+```
 
-🖥 How It Works
-
-1️⃣ Haze Detection
-
-The CNN model predicts whether an image is hazy or clear.
-
-2️⃣ Haze Removal
-
-If an image is hazy, the DCP algorithm estimates the transmission map and atmospheric light to restore visibility.
-
-📸 Sample Interface
-
-Here’s how the application interface looks:
+## Here is how the interface looks:
 
 
-
+![Interface Screenshot](arayüz.png)
